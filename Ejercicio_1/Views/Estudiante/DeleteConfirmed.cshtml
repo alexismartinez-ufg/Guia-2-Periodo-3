@@ -1,0 +1,55 @@
+﻿@model DBContext.models.Estudiante
+
+@{
+    ViewData["Title"] = "Delete Estudiante";
+    Layout = "_Layout"; // Asegúrate de establecer el layout según tu configuración
+}
+
+<div class="text-center">
+    <h1>Eliminar Estudiante</h1>
+
+    <h3>¿Seguro que deseas eliminar al estudiante?</h3>
+    <div>
+        <h4>Estudiante</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ApellidoPaterno)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ApellidoPaterno)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ApellidoMaterno)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ApellidoMaterno)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaInscripción)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FechaInscripción)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Edad)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Edad)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IdEstudiante" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+</div>
